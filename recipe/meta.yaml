@@ -1,5 +1,4 @@
-{% set version = '0.3.14' %}
-
+{% set version = '0.3.15' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,44 +9,44 @@ package:
 source:
   fn: inline_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/inline_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/inline/inline_{{ version }}.tar.gz
-
-
-  sha256: fd34d6bf965148d26d983a022a0ff7bc1a5831f6ca066deee3f6139894dfc931
+    - {{ cran_mirror }}/src/contrib/inline_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/inline/inline_{{ version }}.tar.gz
+  sha256: ff043fe13c1991a3b285bed256ff4a9c0ba10bee764225a34b285875b7d69c68
 
 build:
+  merge_build_host: True  # [win]
   number: 0
-  skip: True  # [win32]
-
-
+  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-
   run:
     - r-base
 
 test:
   commands:
-    - $R -e "library('inline')"  # [not win]
+    - $R -e "library('inline')"           # [not win]
     - "\"%R%\" -e \"library('inline')\""  # [win]
-
-
 
 about:
   home: https://CRAN.R-project.org/package=inline
   license: LGPL
-  summary: Functionality to dynamically define R functions and S4 methods with inlined C, C++
-    or Fortran code supporting .C and .Call calling conventions.
+  summary: Functionality to dynamically define R functions and S4 methods with 'inlined' C, C++
+    or Fortran code supporting the .C and .Call calling conventions.
   license_family: LGPL
-
-
 
 extra:
   recipe-maintainers:
     - croth1
+    - johanneskoester
+    - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
