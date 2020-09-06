@@ -14,9 +14,9 @@ source:
   sha256: d216a46d65e2b7f5dae2eb06ff44bee16262f1d29605e3267456191b39143575
 
 build:
-  noarch: generic
   merge_build_host: true  # [win]
   number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -36,19 +36,13 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=inline
-  license: LGPL
+  license: LGPL-2.0-or-later
   summary: Functionality to dynamically define R functions and S4 methods with 'inlined' C, C++ or Fortran code supporting the .C and .Call calling conventions.
   license_family: LGPL
-
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-3
+
 extra:
   recipe-maintainers:
     - conda-forge/r
     - croth1
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
