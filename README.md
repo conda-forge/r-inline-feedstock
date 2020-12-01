@@ -5,11 +5,9 @@ Home: https://CRAN.R-project.org/package=inline
 
 Package license: LGPL-2.0-or-later
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-inline-feedstock/blob/master/LICENSE.txt)
 
 Summary: Functionality to dynamically define R functions and S4 methods with 'inlined' C, C++ or Fortran code supporting the .C and .Call calling conventions.
-
-
 
 Current build status
 ====================
