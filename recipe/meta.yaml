@@ -1,6 +1,5 @@
 {% set version = "0.3.19" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-inline
@@ -14,8 +13,7 @@ source:
   sha256: 0ee9309bb7dab0b97761ddd18381aa12bd7d54678ccd7bec00784e831f4c99d5
 
 build:
-  merge_build_host: true  # [win]
-  number: 2
+  number: 3
   noarch: generic
   rpaths:
     - lib/R/lib/
