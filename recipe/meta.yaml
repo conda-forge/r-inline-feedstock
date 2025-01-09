@@ -1,4 +1,4 @@
-{% set version = "0.3.20" %}
+{% set version = "0.3.21" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/inline_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/inline/inline_{{ version }}.tar.gz
-  sha256: 72c4af5d872fe2689444d74d5722e732d7a4b896aca73aad0b3f200268570204
+  sha256: 7ef9410a933a47f6a346bc8c0e55b62931379b464b92696aee9865ec6378bc98
 
 build:
   number: 0
